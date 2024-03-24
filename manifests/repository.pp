@@ -250,6 +250,7 @@ define restic::repository (
 
     $config_keys = {
       'GLOBAL_FLAGS' => [ $_global_flags, ].flatten.join(' '),
+      'GOMAXPROCS' => '3',
     } + $type_config
 
     $config_keys.each |$config,$data| {
